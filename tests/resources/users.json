@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "last_name": "Admin",
+            "first_name": "Mr",
+            "email": "admin@uniq.app",
+            "confirmed": true,
+            "role": "Administrator",
+            "other_permissions": "N/A",
+            "social": "None",
+            "last_updated": ""
+
+        },
+        {
+            "last_name": "User",
+            "first_name": "Teacher",
+            "email": "teacher@uniq.app",
+            "confirmed": true,
+            "role": "Teacher",
+            "other_permissions": "N/A",
+            "social": "None",
+            "last_updated": ""
+
+        },
+        {
+            "last_name": "User",
+            "first_name": "Student",
+            "email": "student@uniq.app",
+            "confirmed": true,
+            "role": "Student",
+            "other_permissions": "N/A",
+            "social": "None",
+            "last_updated": ""
+
+        },
+        {
+            "last_name": "User",
+            "first_name": "Normal",
+            "email": "user@uniq.app",
+            "confirmed": true,
+            "role": "Student",
+            "other_permissions": "N/A",
+            "social": "None",
+            "last_updated": ""
+
+        }
+    ],
+    "meta" : {
+        "total": 4,
+        "limit": 4,
+        "offset": 0
+    }
+}
