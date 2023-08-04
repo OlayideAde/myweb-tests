@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pytest-bdd = "*"
-pytest = "*"
+pytest = "^7.1.2"
 pytest-html = "*"
 requests-mock = "*"
 requests = "*"
@@ -13,7 +13,7 @@ requests = "*"
 [dev-packages]
 
 [scripts]
-test = "pytest"
+test = "pipenv run pytest"
 
 [requires]
 python_version = "3.11"
