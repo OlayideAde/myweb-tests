@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pytest-bdd = "*"
-pytest = "^7.1.2"
+pytest = "*"
 pytest-html = "*"
 requests-mock = "*"
 requests = "*"
