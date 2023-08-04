@@ -1,8 +1,8 @@
 import pytest
 import json
+from api_service import API
 from unittest.mock import MagicMock, patch
 from pytest_bdd import scenario, given, when, then, parsers
-from services.api import API
 
 #@pytest.fixture(scope='session')
 #def step_context():
@@ -34,8 +34,8 @@ def request_users(self, mock_requests):
      
     mock_requests.get.return_value = mock_response
     
-    api = API('api.myweb.com')
-    response = api.request('GET', 'api/v1/users')
+    api_service = API('api.myweb.com')
+    response = api_service.request('GET', 'api/v1/users')
     self.assertIsNotNone(response)
     
 @then("I get HTTP 200 status code")
@@ -49,8 +49,8 @@ def verify_status_code(self, mock_requests):
      
     mock_requests.get.return_value = mock_response
     
-    api = API('api.myweb.com')
-    response = api.request('GET', 'api/v1/users')
+    api_service = API('api.myweb.com')
+    response = api_service.request('GET', 'api/v1/users')
     self.assertIsNotNone(response)
     self.assertIsTrue(response.status_code, 200)
  
