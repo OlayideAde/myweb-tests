@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 from pytest_bdd import scenario, given, when, then, parsers
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def step_context():
-    return {'response': None}
+    return {'response.status_code': 0, 'response.json.return_value': {}}
 
 
 @scenario('../features/view_users.feature', 'API admin user can get list of users')
@@ -36,21 +36,21 @@ def test_request_users(mock_requests, step_context):
 
     # call service with mock
     api_service = API('http://api.myweb.com')
-
     response = api_service.request('GET', 'api/v1/users')
-    step_context['response'] = response
+    step_context['response.status_code'] = response.status_code
+    step_context['response_data'] = response.json.return_value
     assert response.ok, "api call successful"
 
 
 @then("I get HTTP 200 status code")
 def test_verify_status_code(step_context):
-    assert step_context['response'].status_code == 200
+    assert step_context['response.status_code'] == 200
 
 
 @then("I get JSON in response body")
 def test_verify_response_body(step_context):
     with open(os.getcwd()+'/tests/resources/users.json') as users:
-        assert step_context['response'].json.return_value == users
+        assert step_context['response.json.return_value'] == users
 
 
 @then("the HTTP response body contains a page with 4 users")
