@@ -8,7 +8,6 @@ from pytest_bdd import scenario, given, when, then, parsers
 def context():
     return {}
 
-
 @scenario('../features/view_users.feature', 'API admin user can get list of users')
 
 def scenario_api():
@@ -16,12 +15,12 @@ def scenario_api():
     pass
 
 @given("I am logged in as admin user")
-def admin_user_is_logged_in():
+def test_admin_user_is_logged_in():
     """Admin user is logged in"""
 
 @when("I request API GET api/v1/users")
 @patch('mywebtests.services.api.requests.get')
-def request_users(self, mock_requests):
+def test_request_users(self, mock_requests):
     
     mock_response = MagicMock()
     mock_response.return_value.ok = True
